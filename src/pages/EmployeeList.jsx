@@ -1,6 +1,7 @@
 import React from "react";
 import { useContext } from "react";
 import { EmployeeContext } from "../context/EmployeeContext";
+import { NavLink } from "react-router-dom";
 const EmployeeList = () => {
   const { employees, addEmployee } = useContext(EmployeeContext);
   // console.log(employees);
@@ -10,6 +11,19 @@ const EmployeeList = () => {
   return (
     <>
       <h1>Employee List</h1>
+
+      <NavLink 
+      to={"/employee/add"}
+      style={{
+        display: 'inline-block',
+        marginBottom: '1rem',
+        padding: '0.5rem 1rem',
+        backgroundColor: '#003366',
+        color: 'white',
+        textDecoration: 'none',
+        borderRadius: '4px',
+      }}
+      > + Add Employee </NavLink>
       <table>
         <thead>
           <tr>
