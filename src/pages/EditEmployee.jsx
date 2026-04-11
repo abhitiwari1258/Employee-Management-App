@@ -4,7 +4,7 @@ import { EmployeeContext } from "../context/EmployeeContext";
 
 const EditEmployee = () => {
   const { id } = useParams();
-  const { employees, addEmployee } = useContext(EmployeeContext);
+  const { employees, updateEmployee } = useContext(EmployeeContext);
   const navigate = useNavigate();
   const existing = employees.find((emp) => emp.id === Number(id));
 
@@ -25,9 +25,7 @@ const EditEmployee = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert(
-      `This will update employee ${formData.name} (feature in next module)`,
-    );
+    updateEmployee(formData)
     navigate(`/employees/${id}`);
   };
   return (
