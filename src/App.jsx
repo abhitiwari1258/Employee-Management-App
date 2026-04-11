@@ -6,6 +6,8 @@ import About from "./pages/About";
 import AppLayouts from "./layouts/AppLayouts";
 import EmployeeList from "./pages/EmployeeList";
 import AddEmployee from "./pages/AddEmployee"
+import ViewEmployee from "./pages/ViewEmployee"
+import EditEmployee from "./pages/EditEmployee"
 function App() {
   return (
     <Routes>
@@ -14,10 +16,10 @@ function App() {
         <Route path="/employees" element={<EmployeeList />} />
         <Route path="employee/add" element={<AddEmployee/>}></Route>
 
-        {/* <Route path="employees/:id" element={<ViewEmployee />} />  */}
+        <Route path="employees/:id" element={<ViewEmployee />} /> 
 
-        {/* <Route path="employees/:id/edit" element={<EditEmployee />} />  */}
-        
+        <Route path="employees/:id/edit" element={<EditEmployee />} /> 
+
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
       </Route>

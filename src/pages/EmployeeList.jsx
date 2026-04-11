@@ -9,7 +9,7 @@ const EmployeeList = () => {
   
   
   return (
-    <>
+    <div>
       <h1>Employee List</h1>
 
       <NavLink 
@@ -24,9 +24,9 @@ const EmployeeList = () => {
         borderRadius: '4px',
       }}
       > + Add Employee </NavLink>
-      <table>
+      <table border="1" cellPadding="8" style={{ borderCollapse: 'collapse', width: '100%' }}>
         <thead>
-          <tr>
+          <tr style={{ backgroundColor: '#eee' }}>
             <td>ID</td>
             <td>Name</td>
             <td>Role</td>
@@ -41,11 +41,12 @@ const EmployeeList = () => {
               <td>{emp.name}</td>
               <td>{emp.role}</td>
               <td>{emp.department}</td>
+              <NavLink to={`/employees/${emp.id}`}>View</NavLink>
             </tr>
           ))}
         </tbody>
       </table>
-    </>
+    </div>
   );
 };
 
