@@ -9,11 +9,11 @@ const ViewEmployee = () => {
 
   const { employees } = useContext(EmployeeContext);
 
-  console.log(employees);
+//   console.log(employees);
   
 
   const employee = employees.find((emp) => emp.id === Number(id));
-  console.log(employee);
+//   console.log(employee);
 
   if (!employee) {
     return (
@@ -42,7 +42,7 @@ const ViewEmployee = () => {
 
       <div style={{ marginTop: '1rem' }}>
 
-        <Link to={"/employees/:id/edit"} style={{ marginRight: '1rem' }}>Edit</Link>
+        <Link to={`/employees/${id}/edit`} style={{ marginRight: '1rem' }}>Edit</Link>
 
          <Link to="/employees">Back to List</Link>
       </div>

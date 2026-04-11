@@ -1,5 +1,6 @@
 using react router dom
 creating pages home about contact
+routing and nested routing
 
 useContext to show data
 

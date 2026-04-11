@@ -13,7 +13,7 @@ const EmployeeList = () => {
       <h1>Employee List</h1>
 
       <NavLink 
-      to={"/employee/add"}
+      to={"/employees/add"}
       style={{
         display: 'inline-block',
         marginBottom: '1rem',
@@ -41,7 +41,9 @@ const EmployeeList = () => {
               <td>{emp.name}</td>
               <td>{emp.role}</td>
               <td>{emp.department}</td>
+              <td>
               <NavLink to={`/employees/${emp.id}`}>View</NavLink>
+              </td>
             </tr>
           ))}
         </tbody>
