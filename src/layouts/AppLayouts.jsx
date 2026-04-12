@@ -1,53 +1,77 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import { NavLink } from 'react-router-dom'
+import React from "react";
+import { Outlet } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import { useAuth } from "../context/AuthContext.jsx";
+
 const AppLayouts = () => {
+  const { user, logout } = useAuth();
+
+  const navLinkStyle = ({ isActive }) => ({
+    marginRight: "1rem",
+    textDecoration: isActive ? "underline" : "none",
+    color: isActive ? "blue" : "black",
+  });
+
   return (
     <div>
-      <header style={{background: 'rgb(104,124,144)', color: 'white', padding: '1rem'}}>
-
+      <header
+        style={{
+          background: "rgb(104,124,144)",
+          color: "white",
+          padding: "1rem",
+        }}
+      >
         <h1>Welcome to Employee Management</h1>
 
-        <nav style={{marginBottom: '1rem'}}>
-          <NavLink to={'/'} 
-          style={({isActive})=> ({
-            marginRight: '1rem',
-            textDecoration: isActive ? 'underline' : 'none',
-            color: isActive ? 'blue' : 'black'
-          })}
-          >Home</NavLink>
+        <nav style={{ marginBottom: "1rem" }}>
+          <NavLink to={"/"} style={navLinkStyle}>
+            Home
+          </NavLink>
 
-          <NavLink to={'/employees'} 
-          style={({isActive})=> ({
-            marginRight: '1rem',
-            textDecoration: isActive ? 'underline' : 'none',
-            color: isActive ? 'blue' : 'black'
-          })}
-          >Employee List</NavLink>
-          
+          <NavLink to={"/employees"} style={navLinkStyle}>
+            Employee List
+          </NavLink>
 
-          <NavLink to={'/about'} 
-          style={({isActive})=> ({
-            marginRight: '1rem',
-            textDecoration: isActive ? 'underline' : 'none',
-            color: isActive ? 'blue' : 'black'
-          })}>About</NavLink>
+          <NavLink to={"/about"} style={navLinkStyle}>
+            About
+          </NavLink>
 
-          <NavLink to={'/contact'} 
-          style={({isActive})=> ({
-            marginRight: '1rem',
-            textDecoration: isActive ? 'underline' : 'none',
-            color: isActive ? 'blue' : 'black'
-          })}>Contact</NavLink>
+          <NavLink to={"/contact"} style={navLinkStyle}>
+            Contact
+          </NavLink>
         </nav>
 
+        <div style={{ position: "absolute", top: "1rem", right: "2rem" }}>
+          {user ? (
+            <>
+              <span style={{ marginRight: "1rem" }}>Hi, {user.username}</span>
+              <button
+                onClick={logout}
+                style={{
+                  background: "#d9534f",
+                  color: "white",
+                  border: "none",
+                  borderRadius: "4px",
+                  padding: "0.5rem 1rem",
+                  cursor: "pointer",
+                }}
+              >
+                Logout
+              </button>
+            </>
+          ) : (
+            <NavLink to="/login" style={{ color: "white" }}>
+              Login
+            </NavLink>
+          )}
+        </div>
       </header>
 
-      <main style={{padding: '1rem'}}>
-        <Outlet/>
+      <main style={{ padding: "1rem" }}>
+        <Outlet />
       </main>
     </div>
-  )
-}
+  );
+};
 
-export default AppLayouts
+export default AppLayouts;

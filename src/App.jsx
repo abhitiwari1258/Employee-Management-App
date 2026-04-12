@@ -20,7 +20,7 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/contact" element={<Contact />} />
-        <Route path="login" element={<Login />} />
+        <Route path="/login" element={<Login />} />
 
         <Route element={<RequireAuth/>}>
           <Route path="/employees" element={<EmployeeLayout />}>
