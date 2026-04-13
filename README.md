@@ -11,3 +11,13 @@ one feature added [we add new employee by filling form detail and show in employ
 add, edit, delete employee
 
 adding authentication login logout using localstorage to save admin password 
+
+npm i uuid
+UUID stands for Universally Unique Identifier
+A UUID is like a digital fingerprint for something
+
+employ not found component
+
+npm run build
+
+

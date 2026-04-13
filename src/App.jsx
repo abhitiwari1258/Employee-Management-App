@@ -12,6 +12,7 @@ import EmployeeLayout from "./pages/employees/EmployeeLayout";
 import EmployeeStats from "./pages/employees/EmployeeStats";
 import RequireAuth from "./components/RequireAuth";
 import Login from "./pages/Login";
+import NotFound from "./pages/NotFound";
 
 function App() {
   return (
@@ -23,18 +24,21 @@ function App() {
         <Route path="/login" element={<Login />} />
 
         <Route element={<RequireAuth/>}>
-          <Route path="/employees" element={<EmployeeLayout />}>
-            <Route index element={<EmployeeList />} />
+          <Route path="/employees" element=     {<EmployeeLayout />}>
+              <Route index element={<EmployeeList />} />
 
-            <Route path="stats" element={<EmployeeStats />}/>
+              <Route path="stats" element={<EmployeeStats />}/>
 
-            <Route path="add" element={<AddEmployee />}/>
+              <Route path="add" element={<AddEmployee />}/>
 
-            <Route path=":id" element={<ViewEmployee />} />
+              <Route path=":id" element={<ViewEmployee />} />
 
-            <Route path=":id/edit" element={<EditEmployee />} />
+              <Route path=":id/edit" element={<EditEmployee />} />
           </Route>
         </Route>
+
+        {/* 404 fallback route */}
+        <Route path="*" element={<NotFound />} />
       </Route>
     </Routes>
   );
