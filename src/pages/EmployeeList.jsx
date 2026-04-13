@@ -27,17 +27,16 @@ const EmployeeList = () => {
       <table border="1" cellPadding="8" style={{ borderCollapse: 'collapse', width: '100%' }}>
         <thead>
           <tr style={{ backgroundColor: '#eee' }}>
-            <td>ID</td>
-            <td>Name</td>
-            <td>Role</td>
-            <td>Deoartment</td>
+            <th>Name</th>
+            <th>Role</th>
+            <th>Deoartment</th>
+            <th>Actions</th>
           </tr>
         </thead>
 
         <tbody>
           {employees.map((emp) => (
             <tr key={emp.id}>
-              <td>{emp.id}</td>
               <td>{emp.name}</td>
               <td>{emp.role}</td>
               <td>{emp.department}</td>

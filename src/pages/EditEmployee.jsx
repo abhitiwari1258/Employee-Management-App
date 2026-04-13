@@ -6,7 +6,7 @@ const EditEmployee = () => {
   const { id } = useParams();
   const { employees, updateEmployee } = useContext(EmployeeContext);
   const navigate = useNavigate();
-  const existing = employees.find((emp) => emp.id === Number(id));
+  const existing = employees.find((emp) => emp.id === id);
 
 //   console.log(employees);
 //   console.log("exist data", existing);
@@ -25,7 +25,7 @@ const EditEmployee = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    updateEmployee(formData)
+    updateEmployee(id,formData)
     navigate(`/employees/${id}`);
   };
   return (
