@@ -2,7 +2,7 @@ import React from 'react'
 
 const Contact = () => {
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-100 py-12 px-6">
+    <div className="min-h-auto bg-gradient-to-br from-gray-50 to-blue-100 py-12 px-6">
 
       <div className="max-w-6xl mx-auto bg-white rounded-2xl shadow-xl p-8 grid md:grid-cols-2 gap-10">
 
