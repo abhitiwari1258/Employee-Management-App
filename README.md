@@ -20,4 +20,7 @@ employ not found component
 
 npm run build
 
+adding tailwind css in every single page
+
+
 
